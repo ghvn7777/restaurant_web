@@ -33,3 +33,14 @@ Then I also want a menu page. Now this menu page should feature all the menu ite
 Now I really want this menu page to be unique in the sense that it should feel like a menu that you're paging through, with the details and images for each of these items.
 
 Now, for all of the images in this website, I want you to use stock images from popular websites like Pexels. This includes all of the images on the Home page, on the Upcoming Events, the Menus, and for the About Us page as well.
+
+---
+write to ./docs/specs/0001-plan.md and implement it.
+
+# Download image skill
+I want you to create a new Claude code skill. Below you will find the documentation for creating skill. What I want to do is to create a skill that will download an image from URL, resize it, and then convert it to WebP. What we will use the skill for is to download all these stock images from websites like Pexels, and then resize them for use in our application and convert them to WebP. These final WebP files should be stored in the public folder. That way, we can cache them to improve the website's performance.
+
+[Copy this page https://code.claude.com/docs/en/skills]
+
+# Download images to webp
+Please can you use your image-optimizer skill to download all of the stock images used in this application? Ithink a lot of them are actually being retrieved from Pexels, then resize them and convert them to WebP. They need to be stored in the public folder. Then you need to update all of the references to these images to use these local versions of the images instead.

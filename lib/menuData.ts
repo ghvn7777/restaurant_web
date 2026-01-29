@@ -1,100 +1,61 @@
 import { MenuItem, Event } from "./types";
 
-// Pexels image mappings for each menu item
+// Local WebP image mappings for each menu item
 const imageMap: Record<string, string> = {
   // Appetizers
-  Bruschetta:
-    "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Crispy Calamari":
-    "https://images.pexels.com/photos/8697540/pexels-photo-8697540.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Stuffed Mushrooms":
-    "https://images.pexels.com/photos/5639418/pexels-photo-5639418.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Soup of the Day":
-    "https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Caprese Salad":
-    "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=600",
+  Bruschetta: "/images/bruschetta.webp",
+  "Crispy Calamari": "/images/crispy-calamari.webp",
+  "Stuffed Mushrooms": "/images/stuffed-mushrooms.webp",
+  "Soup of the Day": "/images/soup-of-the-day.webp",
+  "Caprese Salad": "/images/caprese-salad.webp",
 
   // Salads
-  "Caesar Salad":
-    "https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Greek Salad":
-    "https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Garden Salad":
-    "https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Grilled Chicken Salad":
-    "https://images.pexels.com/photos/2741448/pexels-photo-2741448.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "Caesar Salad": "/images/caesar-salad.webp",
+  "Greek Salad": "/images/greek-salad.webp",
+  "Garden Salad": "/images/garden-salad.webp",
+  "Grilled Chicken Salad": "/images/grilled-chicken-salad.webp",
 
   // Main Courses
-  "Grilled Salmon":
-    "https://images.pexels.com/photos/3763847/pexels-photo-3763847.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Filet Mignon":
-    "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Chicken Parmesan":
-    "https://images.pexels.com/photos/6210876/pexels-photo-6210876.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Mushroom Risotto":
-    "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Grilled Ribeye":
-    "https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Seafood Linguine":
-    "https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Lamb Chops":
-    "https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Vegetable Stir Fry":
-    "https://images.pexels.com/photos/262897/pexels-photo-262897.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "Grilled Salmon": "/images/grilled-salmon.webp",
+  "Filet Mignon": "/images/filet-mignon.webp",
+  "Chicken Parmesan": "/images/chicken-parmesan.webp",
+  "Mushroom Risotto": "/images/mushroom-risotto.webp",
+  "Grilled Ribeye": "/images/grilled-ribeye.webp",
+  "Seafood Linguine": "/images/seafood-linguine.webp",
+  "Lamb Chops": "/images/lamb-chops.webp",
+  "Vegetable Stir Fry": "/images/vegetable-stir-fry.webp",
 
   // Pasta
-  "Spaghetti Bolognese":
-    "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Fettuccine Alfredo":
-    "https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Penne Arrabbiata":
-    "https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Lobster Ravioli":
-    "https://images.pexels.com/photos/4871119/pexels-photo-4871119.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "Spaghetti Bolognese": "/images/spaghetti-bolognese.webp",
+  "Fettuccine Alfredo": "/images/fettuccine-alfredo.webp",
+  "Penne Arrabbiata": "/images/penne-arrabbiata.webp",
+  "Lobster Ravioli": "/images/lobster-ravioli.webp",
 
   // Pizza
-  Margherita:
-    "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Pepperoni:
-    "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Four Cheese":
-    "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Prosciutto e Rucola":
-    "https://images.pexels.com/photos/1260968/pexels-photo-1260968.jpeg?auto=compress&cs=tinysrgb&w=600",
+  Margherita: "/images/margherita.webp",
+  Pepperoni: "/images/pepperoni.webp",
+  "Four Cheese": "/images/four-cheese.webp",
+  "Prosciutto e Rucola": "/images/prosciutto-e-rucola.webp",
 
   // Desserts
-  Tiramisu:
-    "https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Chocolate Lava Cake":
-    "https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Panna Cotta":
-    "https://images.pexels.com/photos/8963424/pexels-photo-8963424.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "New York Cheesecake":
-    "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Gelato Selection":
-    "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg?auto=compress&cs=tinysrgb&w=600",
+  Tiramisu: "/images/tiramisu.webp",
+  "Chocolate Lava Cake": "/images/chocolate-lava-cake.webp",
+  "Panna Cotta": "/images/panna-cotta.webp",
+  "New York Cheesecake": "/images/ny-cheesecake.webp",
+  "Gelato Selection": "/images/gelato-selection.webp",
 
   // Beverages
-  "Fresh Lemonade":
-    "https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Iced Tea":
-    "https://images.pexels.com/photos/792613/pexels-photo-792613.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Espresso:
-    "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Cappuccino:
-    "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Soft Drinks":
-    "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "Fresh Lemonade": "/images/fresh-lemonade.webp",
+  "Iced Tea": "/images/iced-tea.webp",
+  Espresso: "/images/espresso.webp",
+  Cappuccino: "/images/cappuccino.webp",
+  "Soft Drinks": "/images/soft-drinks.webp",
 
   // Wine
-  "House Red":
-    "https://images.pexels.com/photos/2702805/pexels-photo-2702805.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "House White":
-    "https://images.pexels.com/photos/1123260/pexels-photo-1123260.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "Chianti Classico":
-    "https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=600",
-  Prosecco:
-    "https://images.pexels.com/photos/5088188/pexels-photo-5088188.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "House Red": "/images/house-red.webp",
+  "House White": "/images/house-white.webp",
+  "Chianti Classico": "/images/chianti-classico.webp",
+  Prosecco: "/images/prosecco.webp",
 };
 
 // All menu items parsed from CSV with images
@@ -484,8 +445,7 @@ export const upcomingEvents: Event[] = [
       "Live jazz performances featuring local New York artists. Enjoy smooth melodies with your meal.",
     date: "Every Friday",
     time: "7:00 PM - 10:00 PM",
-    image:
-      "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "/images/friday-jazz.webp",
     recurring: true,
   },
   {
@@ -495,24 +455,18 @@ export const upcomingEvents: Event[] = [
       "Relaxed acoustic performances perfect for Sunday brunch and family gatherings.",
     date: "Every Sunday",
     time: "2:00 PM - 5:00 PM",
-    image:
-      "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "/images/sunday-acoustic.webp",
     recurring: true,
   },
 ];
 
 // Hero image
-export const heroImage =
-  "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=1920";
+export const heroImage = "/images/hero.webp";
 
 // About page images
 export const aboutImages = {
-  founder:
-    "https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=600",
-  interior1:
-    "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
-  interior2:
-    "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=800",
-  kitchen:
-    "https://images.pexels.com/photos/3217156/pexels-photo-3217156.jpeg?auto=compress&cs=tinysrgb&w=800",
+  founder: "/images/about-founder.webp",
+  interior1: "/images/about-interior1.webp",
+  interior2: "/images/about-interior2.webp",
+  kitchen: "/images/about-kitchen.webp",
 };
