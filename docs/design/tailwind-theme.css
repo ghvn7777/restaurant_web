@@ -1,0 +1,383 @@
+/**
+ * Bites Restaurant - Tailwind Theme Configuration
+ *
+ * This file contains the complete theme configuration for Tailwind CSS v4.
+ * Copy the @theme block into your app/globals.css file.
+ *
+ * Usage: @import this file or copy the @theme directive into globals.css
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+  --color-brand-primary: #D4952B;
+  --color-brand-primary-light: #E5A84B;
+  --color-brand-primary-dark: #B8820F;
+  --color-brand-primary-muted: #F5E6C8;
+
+  /* ========================================
+     NEUTRAL COLORS (Warm Cream Palette)
+     ======================================== */
+  --color-cream-50: #FDFCFA;
+  --color-cream-100: #F8F5F0;
+  --color-cream-200: #F0EBE3;
+  --color-cream-300: #E5DFD4;
+  --color-cream-400: #C4BBAB;
+  --color-cream-500: #8C8275;
+  --color-cream-600: #5C5449;
+  --color-cream-700: #3D372E;
+  --color-cream-800: #2A2520;
+  --color-cream-900: #1A1714;
+
+  /* ========================================
+     SEMANTIC COLORS
+     ======================================== */
+  --color-success: #4A7C59;
+  --color-success-light: #E8F5EC;
+  --color-warning: #D4952B;
+  --color-warning-light: #FEF6E8;
+  --color-error: #C1413E;
+  --color-error-light: #FEF2F2;
+  --color-info: #4A6FA5;
+  --color-info-light: #EFF6FF;
+
+  /* ========================================
+     SURFACE COLORS
+     ======================================== */
+  --color-surface-page: #FDFCFA;
+  --color-surface-card: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-warm: #FDF8F0;
+  --color-surface-cream: #F5F0E6;
+
+  /* ========================================
+     TYPOGRAPHY - FONT FAMILIES
+     ======================================== */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+  /* ========================================
+     TYPOGRAPHY - FONT SIZES
+     ======================================== */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.4;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.3;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.25;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.2;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1.1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1.1;
+
+  /* ========================================
+     SPACING
+     ======================================== */
+  --spacing-section-sm: 3rem;    /* 48px - mobile section padding */
+  --spacing-section-md: 5rem;    /* 80px - desktop section padding */
+  --spacing-section-lg: 6rem;    /* 96px - large section padding */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  --shadow-sm: 0 1px 2px rgba(26, 23, 20, 0.04);
+  --shadow-md: 0 4px 12px rgba(26, 23, 20, 0.06);
+  --shadow-lg: 0 8px 24px rgba(26, 23, 20, 0.08);
+  --shadow-xl: 0 16px 48px rgba(26, 23, 20, 0.1);
+  --shadow-warm: 0 8px 32px rgba(212, 149, 43, 0.15);
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ========================================
+     Z-INDEX
+     ======================================== */
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-header: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-toast: 60;
+  --z-tooltip: 70;
+
+  /* ========================================
+     CONTAINER
+     ======================================== */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  --animate-fade-in: fade-in 0.6s var(--ease-out) forwards;
+  --animate-fade-in-up: fade-in-up 0.6s var(--ease-out) forwards;
+  --animate-fade-in-down: fade-in-down 0.6s var(--ease-out) forwards;
+  --animate-scale-in: scale-in 0.3s var(--ease-bounce) forwards;
+  --animate-slide-in-right: slide-in-right 0.4s var(--ease-out) forwards;
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface-page);
+  color: var(--color-cream-600);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   TYPOGRAPHY UTILITIES
+   ======================================== */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* ========================================
+   COMPONENT UTILITIES
+   ======================================== */
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 300ms var(--ease-default), box-shadow 300ms var(--ease-default);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button press effect */
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brand-primary);
+  transition: width 250ms var(--ease-default);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+/* Circular image container */
+.circular-image {
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+/* Section padding utility */
+.section-padding {
+  padding-top: var(--spacing-section-sm);
+  padding-bottom: var(--spacing-section-sm);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--spacing-section-md);
+    padding-bottom: var(--spacing-section-md);
+  }
+}
+
+/* Container utility */
+.container-site {
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-site {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-site {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ========================================
+   DECORATIVE PATTERNS
+   ======================================== */
+
+/* Dot pattern background */
+.dot-pattern {
+  background-image: radial-gradient(var(--color-brand-primary-muted) 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+/* Gradient overlays */
+.gradient-warm {
+  background: linear-gradient(135deg, var(--color-surface-warm) 0%, var(--color-surface-page) 100%);
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-primary-light) 100%);
+}
+
+/* ========================================
+   ANIMATION DELAYS (for staggered animations)
+   ======================================== */
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }

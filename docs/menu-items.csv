@@ -1,0 +1,40 @@
+Category,Item Name,Description,Price,Badge
+Appetizers,Bruschetta,Grilled bread topped with fresh tomatoes garlic basil and olive oil,8.50,
+Appetizers,Crispy Calamari,Lightly battered squid rings served with marinara sauce,12.00,Popular
+Appetizers,Stuffed Mushrooms,Button mushrooms filled with herb cream cheese and breadcrumbs,10.50,
+Appetizers,Soup of the Day,Chef's daily creation served with artisan bread,7.00,
+Appetizers,Caprese Salad,Fresh mozzarella tomatoes and basil drizzled with balsamic glaze,11.00,Vegetarian
+Salads,Caesar Salad,Crisp romaine lettuce parmesan croutons and house-made Caesar dressing,9.50,
+Salads,Greek Salad,Cucumbers tomatoes olives red onion feta cheese with oregano vinaigrette,10.00,Vegetarian
+Salads,Garden Salad,Mixed greens seasonal vegetables with choice of dressing,8.00,Vegetarian
+Salads,Grilled Chicken Salad,Mixed greens grilled chicken breast avocado and honey mustard dressing,14.50,
+Main Courses,Grilled Salmon,Atlantic salmon with lemon butter sauce served with seasonal vegetables,24.00,Chef's Choice
+Main Courses,Filet Mignon,8oz prime beef tenderloin with red wine reduction and truffle mashed potatoes,38.00,Premium
+Main Courses,Chicken Parmesan,Breaded chicken breast with marinara and melted mozzarella over linguine,19.50,Popular
+Main Courses,Mushroom Risotto,Creamy arborio rice with wild mushrooms parmesan and truffle oil,18.00,Vegetarian
+Main Courses,Grilled Ribeye,12oz USDA prime ribeye with herb butter and roasted potatoes,42.00,Premium
+Main Courses,Seafood Linguine,Shrimp mussels and clams in white wine garlic sauce over fresh pasta,26.00,
+Main Courses,Lamb Chops,New Zealand lamb chops with rosemary mint sauce and grilled asparagus,34.00,
+Main Courses,Vegetable Stir Fry,Seasonal vegetables in ginger soy glaze served with jasmine rice,16.00,Vegan
+Pasta,Spaghetti Bolognese,Classic meat sauce slow-cooked with tomatoes herbs and red wine,17.00,
+Pasta,Fettuccine Alfredo,Fresh fettuccine in creamy parmesan sauce,15.00,Vegetarian
+Pasta,Penne Arrabbiata,Penne pasta in spicy tomato sauce with garlic and chili flakes,14.50,Spicy
+Pasta,Lobster Ravioli,Handmade ravioli filled with lobster in saffron cream sauce,28.00,Premium
+Pizza,Margherita,San Marzano tomatoes fresh mozzarella basil and olive oil,16.00,Vegetarian
+Pizza,Pepperoni,Tomato sauce mozzarella and premium pepperoni,18.00,Popular
+Pizza,Four Cheese,Mozzarella gorgonzola fontina and parmesan,19.00,Vegetarian
+Pizza,Prosciutto e Rucola,Tomato sauce mozzarella prosciutto arugula and shaved parmesan,21.00,
+Desserts,Tiramisu,Classic Italian dessert with espresso-soaked ladyfingers and mascarpone,9.00,Popular
+Desserts,Chocolate Lava Cake,Warm chocolate cake with molten center served with vanilla ice cream,10.00,
+Desserts,Panna Cotta,Italian cream dessert with berry compote,8.50,
+Desserts,New York Cheesecake,Creamy cheesecake with graham cracker crust and strawberry topping,9.50,
+Desserts,Gelato Selection,Three scoops of authentic Italian gelato,7.50,
+Beverages,Fresh Lemonade,House-made lemonade with fresh mint,4.50,
+Beverages,Iced Tea,Freshly brewed with lemon,3.50,
+Beverages,Espresso,Double shot Italian espresso,3.00,
+Beverages,Cappuccino,Espresso with steamed milk and foam,4.50,
+Beverages,Soft Drinks,Coca-Cola Sprite Fanta or Ginger Ale,3.00,
+Wine,House Red,Glass of Cabernet Sauvignon,9.00,
+Wine,House White,Glass of Pinot Grigio,9.00,
+Wine,Chianti Classico,Full bottle Italian red wine,45.00,
+Wine,Prosecco,Full bottle Italian sparkling wine,38.00,
