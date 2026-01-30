@@ -44,3 +44,23 @@ I want you to create a new Claude code skill. Below you will find the documentat
 
 # Download images to webp
 Please can you use your image-optimizer skill to download all of the stock images used in this application? Ithink a lot of them are actually being retrieved from Pexels, then resize them and convert them to WebP. They need to be stored in the public folder. Then you need to update all of the references to these images to use these local versions of the images instead.
+
+# Chat bot
+I want to you embed this n8n chatbot into our website. Here's the documentation on doing so. https://www.npmjs.com/package/@n8n/chat
+
+Also, here is the webhook URL to our n8n chatbot. https://kakama.app.n8n.cloud/webhook/0b4540c4-dc03-4995-abe3-42084ab31e84/chat
+
+---
+Thank you. I can see the chat bubble; it is working, but the design doesn't look right. It doesn't match the rest of the website. Please can you use the frontend-designer sub-agnet to adjust the styling of this widget?
+
+## Webhook
+I want to implement a reservation button. At the momen, it brings up a modal, but the modal doesn't do anything. What I need to do is call the following n8n webhook endpoint. This webhook expects a name, the party size, and the date and time as a date time field. 
+https://kakama.app.n8n.cloud/webhook-test/make-reservation
+
+You should not call this directive from the front end. This webhook might have authentication on it, so we need to securely call this from the back end. I suggest creating an API in Next.js or a server action or a route handler.
+
+Then the reservation form should only have this information. it should only have the name, the party size, and the date time.
+
+---
+Please use below production endpoint instead webhook url in code
+https://kakama.app.n8n.cloud/webhook/make-reservation

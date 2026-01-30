@@ -12,18 +12,14 @@ interface ReservationModalProps {
 
 interface FormData {
   name: string;
-  email: string;
   partySize: string;
-  date: string;
-  time: string;
+  dateTime: string;
 }
 
 interface FormErrors {
   name?: string;
-  email?: string;
   partySize?: string;
-  date?: string;
-  time?: string;
+  dateTime?: string;
 }
 
 export default function ReservationModal({
@@ -32,14 +28,13 @@ export default function ReservationModal({
 }: ReservationModalProps) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "",
     partySize: "",
-    date: "",
-    time: "",
+    dateTime: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -48,22 +43,12 @@ export default function ReservationModal({
       newErrors.name = "Name is required";
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
     if (!formData.partySize) {
       newErrors.partySize = "Please select party size";
     }
 
-    if (!formData.date) {
-      newErrors.date = "Please select a date";
-    }
-
-    if (!formData.time) {
-      newErrors.time = "Please select a time";
+    if (!formData.dateTime) {
+      newErrors.dateTime = "Please select a date and time";
     }
 
     setErrors(newErrors);
@@ -76,16 +61,35 @@ export default function ReservationModal({
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/reservations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setIsSuccess(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : "Failed to submit reservation"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
-    setFormData({ name: "", email: "", partySize: "", date: "", time: "" });
+    setFormData({ name: "", partySize: "", dateTime: "" });
     setErrors({});
     setIsSuccess(false);
+    setSubmitError(null);
     onClose();
   };
 
@@ -149,7 +153,7 @@ export default function ReservationModal({
               Reservation Confirmed!
             </h3>
             <p className="text-cream-500 text-sm mb-6">
-              We&apos;ve sent a confirmation to {formData.email}
+              We look forward to seeing you, {formData.name}.
             </p>
             <Button onClick={handleClose}>Close</Button>
           </div>
@@ -163,17 +167,6 @@ export default function ReservationModal({
               }
               error={errors.name}
               placeholder="John Doe"
-            />
-
-            <Input
-              label="Email Address"
-              type="email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              error={errors.email}
-              placeholder="john@example.com"
             />
 
             <Select
@@ -195,39 +188,20 @@ export default function ReservationModal({
               ]}
             />
 
-            <div className="grid grid-cols-2 gap-4">
-              <Input
-                label="Date"
-                type="date"
-                value={formData.date}
-                onChange={(e) =>
-                  setFormData({ ...formData, date: e.target.value })
-                }
-                error={errors.date}
-                min={new Date().toISOString().split("T")[0]}
-              />
+            <Input
+              label="Date & Time"
+              type="datetime-local"
+              value={formData.dateTime}
+              onChange={(e) =>
+                setFormData({ ...formData, dateTime: e.target.value })
+              }
+              error={errors.dateTime}
+              min={new Date().toISOString().slice(0, 16)}
+            />
 
-              <Select
-                label="Time"
-                value={formData.time}
-                onChange={(e) =>
-                  setFormData({ ...formData, time: e.target.value })
-                }
-                error={errors.time}
-                options={[
-                  { value: "", label: "Select time" },
-                  { value: "11:00", label: "11:00 AM" },
-                  { value: "12:00", label: "12:00 PM" },
-                  { value: "13:00", label: "1:00 PM" },
-                  { value: "14:00", label: "2:00 PM" },
-                  { value: "17:00", label: "5:00 PM" },
-                  { value: "18:00", label: "6:00 PM" },
-                  { value: "19:00", label: "7:00 PM" },
-                  { value: "20:00", label: "8:00 PM" },
-                  { value: "21:00", label: "9:00 PM" },
-                ]}
-              />
-            </div>
+            {submitError && (
+              <p className="text-sm text-error">{submitError}</p>
+            )}
 
             <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting ? "Confirming..." : "Confirm Reservation"}

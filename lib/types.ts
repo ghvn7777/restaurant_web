@@ -19,8 +19,6 @@ export interface Event {
 
 export interface ReservationData {
   name: string;
-  email: string;
   partySize: string;
-  date: string;
-  time: string;
+  dateTime: string; // ISO datetime string
 }
